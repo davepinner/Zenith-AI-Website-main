@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 25% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 12%;
+    --primary: 221 60% 22%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 220 25% 12%;
+    --muted: 210 20% 96%;
+    --muted-foreground: 220 10% 46%;
+    --accent: 199 80% 48%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 221 60% 22%;
+    --radius: 0.5rem;
+
+    /* Brand colours */
+    --navy-950: 221 60% 12%;
+    --navy-900: 221 60% 18%;
+    --navy-800: 221 60% 22%;
+    --navy-700: 221 55% 30%;
+    --navy-600: 221 50% 38%;
+    --navy-500: 221 45% 48%;
+    --navy-400: 221 40% 60%;
+    --navy-300: 221 35% 72%;
+    --navy-200: 221 30% 84%;
+    --navy-100: 221 25% 93%;
+    --navy-50: 221 20% 97%;
+
+    --teal-600: 199 80% 38%;
+    --teal-500: 199 80% 48%;
+    --teal-400: 199 80% 58%;
+    --teal-100: 199 60% 92%;
+
+    --gold-500: 38 80% 52%;
+    --gold-400: 38 85% 62%;
+    --gold-100: 38 60% 92%;
+  }
+
+  .dark {
+    --background: 220 25% 8%;
+    --foreground: 0 0% 98%;
+    --card: 220 25% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 220 25% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 221 60% 22%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 220 20% 16%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 220 20% 16%;
+    --muted-foreground: 220 10% 64%;
+    --accent: 199 80% 48%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 221 60% 22%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  .container-narrow {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid hsl(var(--accent));
+  outline-offset: 2px;
+}
